@@ -162,6 +162,7 @@ function createLine($string, $color, $ratio) {
 <!doctype html>
 <html>
 	<head>
+		<title>HN Who's Hiring Trends</title>
 		<script type="text/javascript" src="Chart.js"></script>
 		<style>
 			.line-legend {
@@ -209,6 +210,7 @@ function createLine($string, $color, $ratio) {
 				$words = $_GET[words];
 				$words = array_filter($words,'strlen');
 				$words = array_map('trim',$words);
+				$words = array_map('strtolower',$words);
 				createChart($words);
 			}
 		    ?>
@@ -219,4 +221,15 @@ function createLine($string, $color, $ratio) {
 		document.getElementById("legendCustom").innerHTML = customChart.generateLegend();
 
 		</script>
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-51541248-1', 'austinhutchison.com');
+			  ga('send', 'pageview');
+
+		</script>
+
 	</body>
